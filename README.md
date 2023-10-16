@@ -1,6 +1,8 @@
 # Qt Material Design Desktop Widgets [![Language](https://img.shields.io/badge/language-c++-brightgreen.svg)]() [![Join the chat at https://gitter.im/qt-material-widgets/Lobby](https://badges.gitter.im/qt-material-widgets/Lobby.svg)](https://gitter.im/qt-material-widgets/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 YouTube video preview [available here](http://www.youtube.com/watch?v=21UMeNVBPU4).
+Fork from [source repository here](https://github.com/laserpants/qt-material-widgets)
+migrating qmake to cmake.
 
 <table>
   <tbody>
