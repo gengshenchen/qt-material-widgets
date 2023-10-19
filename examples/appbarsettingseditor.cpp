@@ -1,15 +1,12 @@
 #include "appbarsettingseditor.h"
-#include <QtWidgets/QVBoxLayout>
-#include <QColorDialog>
+#include <lib/qtmaterialtheme.h>
 #include <qtmaterialappbar.h>
 #include <qtmaterialiconbutton.h>
-#include <lib/qtmaterialtheme.h>
+#include <QColorDialog>
+#include <QtWidgets/QVBoxLayout>
 
 AppBarSettingsEditor::AppBarSettingsEditor(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::AppBarSettingsForm),
-      m_appBar(new QtMaterialAppBar)
-{
+    : QWidget(parent), ui(new Ui::AppBarSettingsForm), m_appBar(new QtMaterialAppBar) {
     QLabel *label = new QLabel("Inbox");
     label->setAttribute(Qt::WA_TranslucentBackground);
     label->setForegroundRole(QPalette::Foreground);
@@ -54,26 +51,22 @@ AppBarSettingsEditor::AppBarSettingsEditor(QWidget *parent)
     connect(ui->backgroundColorToolButton, SIGNAL(pressed()), this, SLOT(selectColor()));
 }
 
-AppBarSettingsEditor::~AppBarSettingsEditor()
-{
+AppBarSettingsEditor::~AppBarSettingsEditor() {
     delete ui;
 }
 
-void AppBarSettingsEditor::setupForm()
-{
+void AppBarSettingsEditor::setupForm() {
     ui->useThemeColorsCheckBox->setChecked(m_appBar->useThemeColors());
 }
 
-void AppBarSettingsEditor::updateWidget()
-{
+void AppBarSettingsEditor::updateWidget() {
     m_appBar->setUseThemeColors(ui->useThemeColorsCheckBox->isChecked());
 }
 
-void AppBarSettingsEditor::selectColor()
-{
+void AppBarSettingsEditor::selectColor() {
     QColorDialog dialog;
     if (dialog.exec()) {
-        QColor color = dialog.selectedColor();
+        QColor color       = dialog.selectedColor();
         QString senderName = sender()->objectName();
         if ("backgroundColorToolButton" == senderName) {
             m_appBar->setBackgroundColor(color);

@@ -58,4 +58,3 @@ target_link_libraries(materialui PUBLIC
     Qt5::Gui
     Qt5::Widgets
 )
-

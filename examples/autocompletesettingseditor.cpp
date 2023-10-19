@@ -1,13 +1,15 @@
 #include "autocompletesettingseditor.h"
-#include <QVBoxLayout>
-#include <QDebug>
+#include <lib\qtmaterialtheme.h>
 #include <qtmaterialautocomplete.h>
+#include <qtmaterialiconbutton.h>
+#include <QDebug>
+#include <QVBoxLayout>
 
 AutoCompleteSettingsEditor::AutoCompleteSettingsEditor(QWidget *parent)
-    : QWidget(parent),
-      //ui(new Ui::AutoCompleteSettingsForm),
-      m_autocomplete(new QtMaterialAutoComplete)
-{
+    : QWidget(parent)
+    ,
+    //ui(new Ui::AutoCompleteSettingsForm),
+    m_autocomplete(new QtMaterialAutoComplete) {
     QVBoxLayout *layout = new QVBoxLayout;
     setLayout(layout);
 
@@ -18,7 +20,7 @@ AutoCompleteSettingsEditor::AutoCompleteSettingsEditor(QWidget *parent)
     canvas->setStyleSheet("QWidget { background: white; }");
     layout->addWidget(canvas);
 
-    canvas->setMinimumHeight(900); //
+    canvas->setMinimumHeight(900);  //
 
     //ui->setupUi(widget);
     layout->setContentsMargins(20, 20, 20, 20);
@@ -26,66 +28,38 @@ AutoCompleteSettingsEditor::AutoCompleteSettingsEditor(QWidget *parent)
     layout = new QVBoxLayout;
     canvas->setLayout(layout);
 
-    QStringList states =
-      { "Alabama"
-      , "Alaska"
-      , "American Samoa"
-      , "Arizona"
-      , "Arkansas"
-      , "California"
-      , "Colorado"
-      , "Connecticut"
-      , "Delaware"
-      , "District of Columbia"
-      , "Florida"
-      , "Georgia"
-      , "Guam"
-      , "Hawaii"
-      , "Idaho"
-      , "Illinois"
-      , "Indiana"
-      , "Iowa"
-      , "Kansas"
-      , "Kentucky"
-      , "Louisiana"
-      , "Maine"
-      , "Maryland"
-      , "Massachusetts"
-      , "Michigan"
-      , "Minnesota"
-      , "Mississippi"
-      , "Missouri"
-      , "Montana"
-      , "Nebraska"
-      , "Nevada"
-      , "New Hampshire"
-      , "New Jersey"
-      , "New Mexico"
-      , "New York"
-      , "North Carolina"
-      , "North Dakota"
-      , "Northern Marianas Islands"
-      , "Ohio"
-      , "Oklahoma"
-      , "Oregon"
-      , "Pennsylvania"
-      , "Puerto Rico"
-      , "Rhode Island"
-      , "South Carolina"
-      , "South Dakota"
-      , "Tennessee"
-      , "Texas"
-      , "Utah"
-      , "Vermont"
-      , "Virginia"
-      , "Virgin Islands"
-      , "Washington"
-      , "West Virginia"
-      , "Wisconsin"
-      , "Wyoming"
-    };
+    QStringList states = {"Alabama",        "Alaska",
+                          "American Samoa", "Arizona",
+                          "Arkansas",       "California",
+                          "Colorado",       "Connecticut",
+                          "Delaware",       "District of Columbia",
+                          "Florida",        "Georgia",
+                          "Guam",           "Hawaii",
+                          "Idaho",          "Illinois",
+                          "Indiana",        "Iowa",
+                          "Kansas",         "Kentucky",
+                          "Louisiana",      "Maine",
+                          "Maryland",       "Massachusetts",
+                          "Michigan",       "Minnesota",
+                          "Mississippi",    "Missouri",
+                          "Montana",        "Nebraska",
+                          "Nevada",         "New Hampshire",
+                          "New Jersey",     "New Mexico",
+                          "New York",       "North Carolina",
+                          "North Dakota",   "Northern Marianas Islands",
+                          "Ohio",           "Oklahoma",
+                          "Oregon",         "Pennsylvania",
+                          "Puerto Rico",    "Rhode Island",
+                          "South Carolina", "South Dakota",
+                          "Tennessee",      "Texas",
+                          "Utah",           "Vermont",
+                          "Virginia",       "Virgin Islands",
+                          "Washington",     "West Virginia",
+                          "Wisconsin",      "Wyoming"};
 
     m_autocomplete->setDataSource(states);
+    QtMaterialIconButton *m_buttonIcon22 = new QtMaterialIconButton(QtMaterialTheme::icon("navigation", "menu"));
+    layout->addWidget(m_buttonIcon22);
 
     layout->addWidget(m_autocomplete);
     layout->addSpacing(600);
@@ -94,19 +68,12 @@ AutoCompleteSettingsEditor::AutoCompleteSettingsEditor(QWidget *parent)
     setupForm();
 }
 
-AutoCompleteSettingsEditor::~AutoCompleteSettingsEditor()
-{
+AutoCompleteSettingsEditor::~AutoCompleteSettingsEditor() {
     //delete ui;
 }
 
-void AutoCompleteSettingsEditor::setupForm()
-{
-}
+void AutoCompleteSettingsEditor::setupForm() {}
 
-void AutoCompleteSettingsEditor::updateWidget()
-{
-}
+void AutoCompleteSettingsEditor::updateWidget() {}
 
-void AutoCompleteSettingsEditor::selectColor()
-{
-}
+void AutoCompleteSettingsEditor::selectColor() {}
