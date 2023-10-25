@@ -1,13 +1,12 @@
 #ifndef QTMATERIALAPPBAR_H
 #define QTMATERIALAPPBAR_H
 
-#include <QtWidgets/QWidget>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QWidget>
 
 class QtMaterialAppBarPrivate;
 
-class QtMaterialAppBar : public QWidget
-{
+class QtMaterialAppBar : public QWidget {
     Q_OBJECT
 
     Q_PROPERTY(QColor foregroundColor WRITE setForegroundColor READ foregroundColor)
@@ -40,9 +39,8 @@ private:
     Q_DECLARE_PRIVATE(QtMaterialAppBar)
 };
 
-inline QHBoxLayout *QtMaterialAppBar::appBarLayout() const
-{
+inline QHBoxLayout *QtMaterialAppBar::appBarLayout() const {
     return static_cast<QHBoxLayout *>(layout());
 }
 
-#endif // QTMATERIALAPPBAR_H
+#endif  // QTMATERIALAPPBAR_H
